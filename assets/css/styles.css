@@ -1,0 +1,401 @@
+:root {
+  --primary: #0a7c8c;
+  --primary-light: #3bb4c1;
+  --secondary: #ff7e5f;
+  --accent: #ffd166;
+  --light: #f8f9fa;
+  --dark: #2d3436;
+  --success: #06d6a0;
+  --warning: #ffd166;
+  --danger: #ef476f;
+  --gradient-primary: linear-gradient(135deg, #0a7c8c 0%, #3bb4c1 100%);
+  --gradient-accent: linear-gradient(135deg, #ff7e5f 0%, #ff9a5a 100%);
+  --border-radius: 12px;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Base centrada */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header Centrado */
+.header {
+  width: 100%;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 1.5rem 0;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  z-index: 100;
+  text-align: center;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.logo i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Formulario Centrado */
+.form-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: var(--gradient-accent);
+}
+
+.form-title {
+  color: var(--primary);
+  margin: 0 auto 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+  width: fit-content;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+  text-align: center;
+}
+
+.form-group label {
+  display: block;
+  margin: 0 auto 0.8rem;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e3e7;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #f8fafc;
+  text-align: left; /* Inputs con texto izquierdo por usabilidad */
+  margin: 0 auto;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(58, 180, 193, 0.2);
+}
+
+/* Botones Centrados */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 126, 95, 0.4);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Tabla Centrada */
+.table-container {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+.table thead {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.table th {
+  padding: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #f0f4f8;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.table tr:not(:first-child):hover td {
+  background: #f8fafc;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* Cards Centradas */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  transition: all 0.3s;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Footer Centrado */
+.footer {
+  width: 100%;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 3rem 0 1rem;
+  position: relative;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.wave {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f7fa" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f7fa" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f7fa"/></svg>');
+  background-size: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+  
+  .form-container {
+    padding: 1.8rem;
+    margin: 2rem auto;
+    width: 95%;
+  }
+  
+  .table th, .table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+  
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .table-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Añade esto al final de tu CSS para corregir los inputs en esas páginas */
+
+/* Contenedores principales ajustados */
+.form-container {
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  width: 95%; /* Un poco más de margen en móviles */
+  max-width: 500px;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+/* Ajuste específico para inputs y textareas */
+.form-control {
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  width: calc(100% - 4px); /* Compensa el ancho del borde */
+  max-width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e3e7;
+  margin: 0 auto; /* Centrado adicional */
+}
+
+/* Ajuste para selects */
+.form-group select.form-control {
+  width: 100%;
+}
+
+/* Textareas específicamente */
+.form-group textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem;
+    width: 98%;
+  }
+  
+  .form-control {
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+/* Corrección específica para el dashboard */
+.dashboard-container .card {
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Ajuste para botones en formularios */
+.form-actions .btn {
+  width: auto;
+  min-width: 120px;
+  margin: 0.5rem;
+}
+
+/* Corrección para inputs en login/register */
+.auth-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.auth-form .form-control {
+  width: 100%;
+}
